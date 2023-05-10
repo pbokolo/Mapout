@@ -1,0 +1,115 @@
+/*=============================================
+=            #Variables                       =
+=============================================*/
+
+/**
+ *
+ * Table of content
+ *
+ * COLORS
+ * Brand colors...........Main brand colors. To be used the most
+ * Secondary colors.......White and black, gray scale, secondary colors
+ * Utility colors.........Used to represent states: error, warn, etc.
+ *
+ * TYPOGRAPHY
+ * Font families..........The fonts used in the design system
+ * Sizes..................Font sizes for body texts, paragraphs, inputs
+ * Heading sizes..........Font sizing for page headings
+ *
+ * BREAKPOINTS
+ * Breakpoints............Global responsive breakpoints definitions
+ *
+ * SPACING
+ * Spacing................Global set of fixed spacing variables
+ */
+
+/*=============================================
+ =            COLORS                           =
+ =============================================*/
+
+/* Brand Colors */
+$green: #1b4332;
+$green-light: #2d6a4f;
+
+/* Secondary colors */
+$dark: #1d1f22;
+$dark-light: #333333;
+
+/* Neutral Colors */
+$gray: #a3a5ad;
+$gray-light: #bebfc4;
+$white: #fff;
+$white-dark: #f1f2f3;
+
+/* Utility Colors */
+$red: #d12727;
+$red-light: #f8dedf;
+$blue: #0468db;
+$blue-light: #b4d2f4;
+
+/*=====  End of COLORS  ======*/
+
+/*=============================================
+=            TYPOGRAPHY                       =
+=============================================*/
+
+/**
+ *
+ * Font family
+ */
+
+$poppins: "Poppins", sans-serif;
+
+/* Font sizes */
+$fs-xs: 1.2rem; // 12px
+$fs-sm: 1.4rem; // 14px
+$fs-base: 1rem; // 10px
+$fs-lg: 1.8rem; // 18px
+$fs-xl: 2.4rem; // 24px
+
+/* Heading font sizes */
+$h-1: 2.2rem; // 22px
+$h-2: 2.2rem; // 22px
+$h-3: 1rem; // 10px
+$h-4: 1.8rem; // 18px
+$h-5: 1.2rem; // 12px
+$h-6: 1.2rem; // 12px
+
+/* Font weights */
+$fw-light: 100;
+$fw-normal: 200;
+$fw-medium: 300;
+$fw-semibold: 400;
+$fw-bold: 500;
+
+/*=====  End of TYPOGRAPHY  ======*/
+
+/*=============================================
+=            BREAKPOINTS                      =
+=============================================*/
+$breakpoints: (
+  xs: 20rem,
+  sm: 40rem,
+  md: 60rem,
+  lg: 80rem,
+  xl: 10rem,
+);
+/*=====  End of BREAKPOINTS  ======*/
+
+/*=============================================
+=            SPACING                          =
+=============================================*/
+
+$spacing: (
+  xxxs: 0.25rem,
+  xxs: 0.5rem,
+  xs: 0.75rem,
+  sm: 1rem,
+  md: 1.5rem,
+  lg: 2rem,
+  xl: 3rem,
+  xxl: 4.5rem,
+  xxxl: 6rem,
+) !default;
+
+/*=====  End of SPACING  ======*/
