@@ -8,5 +8,7 @@
  =            Global text colors            =
  =============================================*/
 
-$body-text-color: var($dark);
-$body-bg-color: var($white-dark);
+$body-text-color: $dark;
+$body-bg-color: $white-dark;
+
+$side-bg-color: $gray-light;
