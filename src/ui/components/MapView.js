@@ -1,5 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import { controller } from "../../controller/map";
+import NewWorkoutDialog from "./NewWorkoutDialog";
 
 export default function MapView() {
-  return <div className="map">Map</div>;
+  const [showDialog, setShowDialog] = useState(false);
+  return (
+    <div className="map" onClick={() => controller.handleClick(setShowDialog)}>
+      Map
+      {showDialog ? <NewWorkoutDialog /> : ""}
+    </div>
+  );
 }
