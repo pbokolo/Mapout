@@ -47,6 +47,9 @@ $red-light: #f8dedf;
 $blue: #0468db;
 $blue-light: #b4d2f4;
 
+/* Filters */
+$blur: 0.06rem;
+
 /*=====  End of COLORS  ======*/
 
 /*=============================================
@@ -121,3 +124,11 @@ $app-grid-col-1: 30rem;
 $app-grid-col-2: 1fr;
 
 /*=====  End of GRID VALUES  ======*/
+
+/*=============================================
+=            BOX DIMENSIONS            =
+=============================================*/
+$dialog-width: 45rem;
+$dialog-height: 30rem;
+$border-radius-lg: 1rem;
+/*=====  End of BOX DIMENSIONS  ======*/
