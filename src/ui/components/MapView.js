@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { controller } from "../../controller/map";
-import NewWorkoutDialog from "./NewWorkoutDialog";
+import WorkoutDialog from "./WorkoutDialog";
 
 export default function MapView() {
   const [showDialog, setShowDialog] = useState(false);
+
   return (
-    <div className="map" onClick={() => controller.handleClick(setShowDialog)}>
+    <div
+      className="map"
+      onClick={(e) => controller.handleClick(e, setShowDialog)}
+    >
       Map
-      {showDialog ? <NewWorkoutDialog /> : ""}
+      {showDialog ? <WorkoutDialog /> : ""}
     </div>
   );
 }

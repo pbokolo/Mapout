@@ -1,8 +1,16 @@
 class Map {
   constructor() {}
 
-  handleClick(setState) {
-    setState(true);
+  handleClick(e, setState) {
+    if (e.target.id === "dialog") {
+      setState(false);
+    } else {
+      setState(true);
+    }
+  }
+
+  handleClose(setState) {
+    setState(false);
   }
 }
 
