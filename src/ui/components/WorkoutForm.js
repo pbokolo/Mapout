@@ -15,10 +15,7 @@ export default function WorkoutForm() {
         <input type="number" id="distance" />
       </fieldset>
       <fieldset className="fieldset">
-        <label htmlFor="start">Start</label>
-        <input type="number" id="start" />
-        <label htmlFor="end">End</label>
-        <input type="number" id="end" />
+        <input className="submit" type="submit" value="Save" />
       </fieldset>
     </form>
   );
