@@ -1,0 +1,41 @@
+.workout {
+  border-radius: $container-radius;
+  cursor: pointer;
+  background-color: var(--color-grey-dark-2);
+  box-shadow: 0 0.1rem 0.5rem var(--color-grey-dark-2);
+  transition: all 0.2s;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  overflow: hidden;
+  gap: $layout-gap--sm;
+
+  &:hover {
+    background-color: var(--color-grey-dark-3);
+    border-radius: $container-radius--sm;
+  }
+
+  &:hover .workout__indicator {
+    width: $container-radius--sm;
+  }
+
+  &:active {
+    box-shadow: 0 0.02rem 0.25rem var(--color-grey-dark-2);
+  }
+
+  &__indicator {
+    width: $container-radius;
+    height: 100%;
+    transition: all 0.2s;
+    &--c {
+      background-color: var(--color-action);
+    }
+    &--r {
+      background-color: var(--color-blue);
+    }
+  }
+
+  &__details {
+    display: flex;
+    gap: $layout-gap;
+  }
+}

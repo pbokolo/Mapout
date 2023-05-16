@@ -10,7 +10,6 @@ class Workout {
   handleSubmit(e, workout) {
     e.preventDefault();
     workout.date = Date.now();
-    console.log(workout);
   }
 }
 

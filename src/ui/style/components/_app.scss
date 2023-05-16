@@ -1,4 +1,5 @@
 .app {
-  border: 1px solid blue;
   height: 100vh;
+  display: grid;
+  grid-template-columns: 30rem 1fr;
 }

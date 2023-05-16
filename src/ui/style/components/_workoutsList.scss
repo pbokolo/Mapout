@@ -1,0 +1,9 @@
+.workouts {
+  &__container {
+    background-color: var(--color-grey-light-4);
+    padding: $container-padding;
+    display: flex;
+    flex-direction: column;
+    gap: $layout-gap;
+  }
+}
