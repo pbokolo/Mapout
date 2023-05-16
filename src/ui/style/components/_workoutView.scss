@@ -34,8 +34,20 @@
     }
   }
 
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: $layout-gap--sm;
+    margin: $layout-gap--xs 0;
+  }
+
   &__details {
     display: flex;
     gap: $layout-gap;
+    &-elevation {
+      display: flex;
+      align-items: baseline;
+      gap: $layout-gap--sm;
+    }
   }
 }
