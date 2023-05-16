@@ -1,3 +1,9 @@
+@mixin page {
+  min-height: 100vh;
+  width: 99vw;
+  margin: 0 auto;
+}
+
 @mixin respond($breakpoint) {
   @if $breakpoint == xs {
     @media only screen and (min-width: 200px) {
