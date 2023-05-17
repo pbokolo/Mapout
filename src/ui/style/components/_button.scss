@@ -1,0 +1,27 @@
+.btn {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $container-padding--sm;
+  cursor: pointer;
+  box-shadow: 0 0.1rem 0.1rem var(--color-grey-light-4);
+  transition: all 0.2s;
+
+  &--round {
+    border-radius: 50%;
+  }
+
+  &--white {
+    background-color: var(--color-white);
+
+    &:hover {
+      background-color: var(--color-grey-light-2);
+    }
+
+    &:active {
+      transform: translateY(0.1rem);
+      box-shadow: 0 0.05rem 0.05rem var(--color-grey-light-4);
+    }
+  }
+}

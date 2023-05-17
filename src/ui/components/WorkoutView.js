@@ -26,9 +26,7 @@ export default function WorkoutView({ workout }) {
           </span>
           {workout.type === "Cycling" ? (
             <span className="workout__details-elevation">
-              <span>
-                <TerrainIcon />
-              </span>
+              <TerrainIcon />
               {`${workout.elevation} M`}
             </span>
           ) : (

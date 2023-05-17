@@ -2,11 +2,15 @@ class Map {
   constructor() {}
 
   handleClick(e, setState) {
-    if (e.target.id === "dialog") {
-      setState(false);
-    } else {
-      setState(true);
+    if (e.target.id === "map") {
+      this.handleOpenDialog(setState);
+    } else if (e.target.id === "dialog" || e.target.id === "close") {
+      this.handleClose(setState);
     }
+  }
+
+  handleOpenDialog(setState) {
+    setState(true);
   }
 
   handleClose(setState) {

@@ -4,9 +4,9 @@ import WorkoutDialog from "./WorkoutDialog";
 
 export default function MapView() {
   const [showDialog, setShowDialog] = useState(false);
-
   return (
     <div
+      id="map"
       className="map"
       onClick={(e) => controller.handleClick(e, setShowDialog)}
     >
