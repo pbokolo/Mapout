@@ -58,8 +58,12 @@ export default function WorkoutForm() {
       ) : (
         ""
       )}
-      <fieldset className="fieldset">
-        <input className="submit" type="submit" value="Save" />
+      <fieldset className="fieldset fieldset--submit">
+        <input
+          className="btn btn--primary btn--submit"
+          type="submit"
+          value="Save"
+        />
       </fieldset>
     </form>
   );

@@ -20,3 +20,10 @@ body {
     font-size: 1.4rem;
   }
 }
+
+.btn {
+  &--primary {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+}

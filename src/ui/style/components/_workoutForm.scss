@@ -1,0 +1,17 @@
+.form {
+  .fieldset {
+    border: none;
+    margin: $margin 0;
+    display: grid;
+    grid-template-columns: minmax(10rem, 12rem) 12rem;
+    gap: $layout-gap--sm;
+
+    &--submit {
+      justify-content: center;
+      grid-template-columns: repeat(3, 1fr);
+      .btn {
+        grid-column: 2 / 3;
+      }
+    }
+  }
+}

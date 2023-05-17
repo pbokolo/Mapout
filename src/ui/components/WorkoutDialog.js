@@ -10,7 +10,7 @@ export default function WorkoutDialog() {
         <div className="dialog__content-header">
           <h5 className="title-h5">Create a new workout</h5>
         </div>
-        <button className="btn btn--white btn--round">
+        <button className="btn btn--white btn--round btn-close">
           <CloseIcon id="close" />
         </button>
         <div className="dialog__content-body">

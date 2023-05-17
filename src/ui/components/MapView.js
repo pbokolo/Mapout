@@ -3,7 +3,7 @@ import { controller } from "../../controller/map";
 import WorkoutDialog from "./WorkoutDialog";
 
 export default function MapView() {
-  const [showDialog, setShowDialog] = useState(false);
+  const [showDialog, setShowDialog] = useState(true);
   return (
     <div
       id="map"

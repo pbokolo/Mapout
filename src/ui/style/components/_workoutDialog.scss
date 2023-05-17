@@ -10,7 +10,7 @@
     z-index: 10rem;
 
     .dialog__content {
-      width: 40%;
+      width: 35%;
       height: min-content;
       background-color: var(--color-white);
       position: absolute;
@@ -20,7 +20,7 @@
       padding: $container-padding;
       border-radius: $container-radius;
 
-      .btn {
+      .btn-close {
         position: absolute;
         top: 0;
         right: 0;
