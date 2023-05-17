@@ -30,15 +30,20 @@ export default function WorkoutForm() {
       }}
     >
       <fieldset className="fieldset">
-        <label htmlFor="type">Workout</label>
-        <select id="type" onChange={selectChangeHandler}>
+        <label className="label" htmlFor="type">
+          Workout
+        </label>
+        <select className="textInput" id="type" onChange={selectChangeHandler}>
           <option>Running</option>
           <option>Cycling</option>
         </select>
       </fieldset>
       <fieldset className="fieldset">
-        <label htmlFor="distance">Distance</label>
+        <label className="label" htmlFor="distance">
+          Distance
+        </label>
         <input
+          className="textInput"
           type="number"
           id="distance"
           value={workout.distance}
@@ -47,8 +52,11 @@ export default function WorkoutForm() {
       </fieldset>
       {workout.type === "Cycling" ? (
         <fieldset className="fieldset">
-          <label htmlFor="distance">Elevation gain</label>
+          <label className="label" htmlFor="distance">
+            Elevation gain
+          </label>
           <input
+            className="textInput"
             type="number"
             id="elevation"
             value={workout.elevation}

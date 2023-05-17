@@ -3,7 +3,7 @@
     border: none;
     margin: $margin 0;
     display: grid;
-    grid-template-columns: minmax(10rem, 12rem) 12rem;
+    grid-template-columns: minmax(10rem, 12rem) 15rem;
     gap: $layout-gap--sm;
 
     &--submit {
