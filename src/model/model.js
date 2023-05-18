@@ -1,36 +1,15 @@
 class WorkoutDAO {
   #list;
   constructor() {
-    this.#list = [
-      {
-        date: 1684130434844,
-        type: "Running",
-        distance: 20,
-        elevation: 0,
-        location: "",
-      },
-      {
-        date: 1684130434844,
-        type: "Cycling",
-        distance: 20,
-        elevation: 24,
-        location: "",
-      },
-      {
-        date: 1684130434844,
-        type: "Running",
-        distance: 20,
-        elevation: 0,
-        location: "",
-      },
-      {
-        date: 1684130434844,
-        type: "Cycling",
-        distance: 20,
-        elevation: 24,
-        location: "",
-      },
-    ];
+    this.#list = this.#getLocalStorage();
+  }
+
+  #setLocalStorage() {
+    localStorage.setItem("workouts", JSON.stringify(this.#list));
+  }
+
+  #getLocalStorage() {
+    return JSON.parse(localStorage.getItem("workouts"));
   }
 
   getWorkouts() {
@@ -38,7 +17,9 @@ class WorkoutDAO {
   }
 
   save(workout) {
-    localStorage.setItem("workouts", workout);
+    this.#list.push(workout);
+    this.#setLocalStorage();
+    console.log(this.#list);
   }
 }
 

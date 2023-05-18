@@ -21,7 +21,6 @@ export default function MapView() {
     const map = useMap();
 
     const handleClick = (e, map) => {
-      controller.handleClick(e, setShowDialog);
       setPosition(e.latlng);
       map.flyTo(e.latlng, map.getZoom());
     };
@@ -35,14 +34,18 @@ export default function MapView() {
     );
   };
   return (
-    <div id="map" className="map">
-      <MapContainer center={position} zoom={13}>
+    <div
+      id="map"
+      className="map"
+      onClick={(e) => controller.handleClick(e, setShowDialog)}
+    >
+      {/* <MapContainer center={position} zoom={13}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <Map />
-      </MapContainer>
+      </MapContainer> */}
       {showDialog ? <WorkoutDialog /> : ""}
     </div>
   );
