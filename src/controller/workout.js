@@ -1,28 +1,31 @@
 import { model } from "../model/model";
+import { add, set } from "./workoutSlice";
 
 class Workout {
   #workouts;
-  constructor() {
-    this.#refresh();
+  constructor(dispatcher) {
+    const workouts = model.getWorkouts();
+    dispatcher(set(workouts));
   }
 
-  #refresh() {
-    this.#workouts = model.getWorkouts();
+  #refresh(dispatcher) {
+    const workouts = model.getWorkouts();
+    () => dispatcher(set(workouts));
   }
 
   getWorkoutsList() {
     return this.#workouts;
   }
 
-  handleSubmit(e, workout) {
+  handleSubmit(e, workout, dispatcher) {
     e.preventDefault();
     workout.date = Date.now();
     model.save(workout);
-
-    this.#refresh();
+    this.#refresh(dispatcher);
   }
 }
 
 const controller = new Workout();
 
 export { controller };
+export default Workout;

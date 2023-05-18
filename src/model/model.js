@@ -19,7 +19,6 @@ class WorkoutDAO {
   save(workout) {
     this.#list.push(workout);
     this.#setLocalStorage();
-    console.log(this.#list);
   }
 }
 

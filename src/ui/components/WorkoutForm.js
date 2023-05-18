@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 
 import { controller } from "../../controller/workout";
+import { useDispatch } from "react-redux";
 export default function WorkoutForm() {
+  const dispatch = useDispatch();
   const initWorkout = {
     date: "",
     type: "Running",
@@ -26,7 +28,7 @@ export default function WorkoutForm() {
       className="form"
       onSubmit={(e) => {
         setWorkout(initWorkout);
-        controller.handleSubmit(e, workout);
+        controller.handleSubmit(e, workout, dispatch);
       }}
     >
       <fieldset className="fieldset">
