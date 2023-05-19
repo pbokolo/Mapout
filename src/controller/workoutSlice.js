@@ -9,7 +9,9 @@ export const workoutSlice = createSlice({
     add: (state, action) => {
       state.list.push(action.payload);
     },
-    set: (state, action) => (state.list = action.payload),
+    set: (state, action) => {
+      state.list = [...action.payload];
+    },
   },
 });
 
