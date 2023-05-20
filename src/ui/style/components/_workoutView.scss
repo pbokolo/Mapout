@@ -4,25 +4,29 @@
   background-color: var(--color-grey-dark-2);
   transition: all 0.2s;
   display: grid;
-  grid-template-columns: min-content 1fr;
+  grid-template-columns: min-content 1fr min-content;
+  grid-template-rows: min-content repeat(3, 1fr);
   overflow: hidden;
   gap: $layout-gap--sm;
   @include box-shadow-y(var(--color-shadow-light));
 
   &:hover {
-    background-color: var(--color-grey-dark-3);
     border-radius: $container-radius--sm;
   }
 
   &:hover .workout__indicator {
     width: $container-radius--sm;
   }
-
+  &:hover .btn {
+    visibility: visible;
+  }
   &:active {
     box-shadow: 0 0.02rem 0.25rem var(--color-grey-dark-2);
   }
 
   &__indicator {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
     width: $container-radius;
     height: 100%;
     transition: all 0.2s;
@@ -35,6 +39,8 @@
   }
 
   &__container {
+    grid-column: 2 / 3;
+    grid-row: 1 / -1;
     display: flex;
     flex-direction: column;
     gap: $layout-gap--sm;
@@ -49,5 +55,12 @@
       align-items: baseline;
       gap: $layout-gap--sm;
     }
+  }
+
+  .btn {
+    grid-column: 3 / -1;
+    grid-row: 1 / 2;
+    margin: $margin--xs;
+    visibility: hidden;
   }
 }

@@ -8,6 +8,7 @@
   transition: all 0.2s;
   border-radius: $container-radius;
   text-transform: uppercase;
+  width: min-content;
 
   &--round {
     border-radius: 50%;
@@ -39,6 +40,14 @@
     &:active {
       transform: translateY(0.1rem);
       box-shadow: 0 0.05rem 0.05rem var(--color-blue-dark);
+    }
+  }
+
+  &--delete {
+    background-color: var(--color-grey-dark-3);
+    &:hover {
+      color: var(--color-danger);
+      @include box-shadow-y(var(--color-grey-dark-3));
     }
   }
 }

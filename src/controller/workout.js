@@ -18,6 +18,13 @@ class Workout {
     model.save(workout);
     this.#refresh(dispatcher);
   }
+
+  handleClick(e, dispatcher) {
+    const el = e.target.closest("button");
+    const ds = +el.dataset.workout;
+    const list = model.delete(ds);
+    this.#refresh(dispatcher);
+  }
 }
 
 const controller = new Workout();

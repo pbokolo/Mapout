@@ -20,6 +20,11 @@ class WorkoutDAO {
     this.#list.push(workout);
     this.#setLocalStorage();
   }
+  delete(id) {
+    this.#list = this.#list.filter((item) => item.date !== id);
+    this.#setLocalStorage();
+    return this.#list;
+  }
 }
 
 const model = new WorkoutDAO();
