@@ -1,7 +1,5 @@
-@mixin page {
-  min-height: 100vh;
-  width: 99vw;
-  margin: 0 auto;
+@mixin box-shadow-y($color) {
+  box-shadow: 0 0.12rem 0.1rem $color;
 }
 
 @mixin respond($breakpoint) {

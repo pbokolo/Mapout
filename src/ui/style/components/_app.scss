@@ -2,4 +2,18 @@
   height: 100vh;
   display: grid;
   grid-template-columns: 30rem 1fr;
+  grid-template-rows: repeat(5, 1fr);
+
+  .workouts,
+  .map {
+    grid-row: 1 / -1;
+  }
+
+  .workouts {
+    grid-column: 1 / 2;
+  }
+
+  .map {
+    grid-column: 2 / 3;
+  }
 }

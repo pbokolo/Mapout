@@ -2,12 +2,12 @@
   border-radius: $container-radius;
   cursor: pointer;
   background-color: var(--color-grey-dark-2);
-  box-shadow: 0 0.1rem 0.5rem var(--color-grey-dark-2);
   transition: all 0.2s;
   display: grid;
   grid-template-columns: min-content 1fr;
   overflow: hidden;
   gap: $layout-gap--sm;
+  @include box-shadow-y(var(--color-shadow-light));
 
   &:hover {
     background-color: var(--color-grey-dark-3);
