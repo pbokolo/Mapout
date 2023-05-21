@@ -16,12 +16,16 @@ class WorkoutDAO {
     return this.#list;
   }
 
+  getWorkout(id) {
+    return this.#list.find((el) => el.id === id);
+  }
+
   save(workout) {
     this.#list.push(workout);
     this.#setLocalStorage();
   }
   delete(id) {
-    this.#list = this.#list.filter((item) => item.date !== id);
+    this.#list = this.#list.filter((item) => item.id !== id);
     this.#setLocalStorage();
     return this.#list;
   }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { controller } from "../../controller/map";
 import WorkoutDialog from "./WorkoutDialog";
 
@@ -19,9 +19,17 @@ export default function MapView() {
 
   const Map = () => {
     const map = useMap();
-
+    /* navigator.geolocation.getCurrentPosition(
+      (loc) => {
+        const { latitude, longitude } = loc.coords;
+        const pos = [latitude, longitude];
+        setPosition(pos);
+      },
+      (err) => console.log(err)
+    ); */
+    map.flyTo(position, map.getZoom());
     map.on("click", (e) =>
-      controller.handleClick(e, map, setShowDialog, setPosition)
+      controller.handleClick(e, setShowDialog, setPosition)
     );
 
     return position === null ? null : (

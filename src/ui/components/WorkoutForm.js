@@ -10,7 +10,7 @@ export default function WorkoutForm({ coords }) {
     type: "Running",
     distance: 0,
     elevation: 0,
-    location: coords,
+    location: JSON.stringify(coords),
   };
   const [workout, setWorkout] = useState(initWorkout);
 

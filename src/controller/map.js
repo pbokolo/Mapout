@@ -1,10 +1,9 @@
 class Map {
   constructor() {}
 
-  handleClick(e, map, setOpenDialog, setPosition) {
+  handleClick(e, setOpenDialog, setPosition) {
     this.handleOpenDialog(setOpenDialog);
     setPosition(e.latlng);
-    map.flyTo(e.latlng, map.getZoom());
   }
 
   handleOpenDialog(setState) {

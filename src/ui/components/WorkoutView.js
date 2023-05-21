@@ -19,12 +19,12 @@ export default function WorkoutView({ workout }) {
       ></div>
       <button
         id="delete"
-        data-workout={workout.date}
+        data-workout={workout.id}
         className="btn btn--round btn--delete"
       >
         <DeleteForeverIcon className="btn__icon" />
       </button>
-      <div className="workout__container">
+      <div className="workout__container" data-id={workout.id}>
         {" "}
         <p className="workout__title">{`${workout.type} on ${dateStr}`}</p>
         <div className="workout__details">
