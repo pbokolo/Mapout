@@ -1,5 +1,6 @@
 import { model } from "../model/model";
 import { set } from "./workoutSlice";
+import { v4 as uuidv4 } from "uuid";
 
 class Workout {
   constructor() {}
@@ -14,7 +15,9 @@ class Workout {
   }
   handleSubmit(e, workout, dispatcher) {
     e.preventDefault();
+    workout.id = uuidv4();
     workout.date = Date.now();
+
     model.save(workout);
     this.#refresh(dispatcher);
   }
@@ -22,7 +25,7 @@ class Workout {
   handleClick(e, dispatcher) {
     const el = e.target.closest("button");
     const ds = +el.dataset.workout;
-    const list = model.delete(ds);
+
     this.#refresh(dispatcher);
   }
 }

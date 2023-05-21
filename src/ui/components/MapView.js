@@ -20,13 +20,9 @@ export default function MapView() {
   const Map = () => {
     const map = useMap();
 
-    const handleClick = (e, map) => {
-      setPosition(e.latlng);
-      map.flyTo(e.latlng, map.getZoom());
-      setShowDialog(true);
-    };
-
-    map.on("click", (e) => handleClick(e, map));
+    map.on("click", (e) =>
+      controller.handleClick(e, map, setShowDialog, setPosition)
+    );
 
     return position === null ? null : (
       <Marker position={position}>
@@ -35,11 +31,7 @@ export default function MapView() {
     );
   };
   return (
-    <div
-      id="map"
-      className="map"
-      onClick={(e) => controller.handleClick(e, setShowDialog)}
-    >
+    <div id="map" className="map">
       <MapContainer center={position} zoom={13}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -47,7 +39,14 @@ export default function MapView() {
         />
         <Map />
       </MapContainer>
-      {showDialog ? <WorkoutDialog /> : ""}
+      {showDialog ? (
+        <WorkoutDialog
+          closeHandler={(e) => controller.handleCloseDialog(e, setShowDialog)}
+          coords={position}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 }

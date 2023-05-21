@@ -2,14 +2,15 @@ import React, { useState } from "react";
 
 import { controller } from "../../controller/workout";
 import { useDispatch } from "react-redux";
-export default function WorkoutForm() {
+export default function WorkoutForm({ coords }) {
   const dispatch = useDispatch();
   const initWorkout = {
+    id: "",
     date: "",
     type: "Running",
     distance: 0,
     elevation: 0,
-    location: "",
+    location: coords,
   };
   const [workout, setWorkout] = useState(initWorkout);
 
