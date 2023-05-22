@@ -36,7 +36,9 @@ export default function MapView() {
         />
         {workouts.map((workout) => (
           <Marker key={workout.id} position={JSON.parse(workout.location)}>
-            <Popup>{workout.type}</Popup>
+            <Popup className="popup">{`${
+              workout.type.toLowerCase() === "cycling" ? "🚴🏿‍♂️" : "🏃‍♂️"
+            } ${workout.type}`}</Popup>
           </Marker>
         ))}
       </MapContainer>
