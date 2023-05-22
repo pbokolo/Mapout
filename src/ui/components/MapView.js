@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { controller } from "../../controller/map";
+
+import { Map } from "./Map";
 import WorkoutDialog from "./WorkoutDialog";
 
-import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+
 import "leaflet/dist/leaflet.css";
 
 delete L.Icon.Default.prototype._getIconUrl;
@@ -16,28 +20,8 @@ L.Icon.Default.mergeOptions({
 export default function MapView() {
   const [showDialog, setShowDialog] = useState(false);
   const [position, setPosition] = useState([0.4880271, 29.4203555]);
+  const workouts = useSelector((state) => state.workouts.list);
 
-  const Map = () => {
-    const map = useMap();
-    /* navigator.geolocation.getCurrentPosition(
-      (loc) => {
-        const { latitude, longitude } = loc.coords;
-        const pos = [latitude, longitude];
-        setPosition(pos);
-      },
-      (err) => console.log(err)
-    ); */
-    map.flyTo(position, map.getZoom());
-    map.on("click", (e) =>
-      controller.handleClick(e, setShowDialog, setPosition)
-    );
-
-    return position === null ? null : (
-      <Marker position={position}>
-        <Popup>You are here</Popup>
-      </Marker>
-    );
-  };
   return (
     <div id="map" className="map">
       <MapContainer center={position} zoom={13}>
@@ -45,7 +29,16 @@ export default function MapView() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Map />
+        <Map
+          position={position}
+          positionSetter={setPosition}
+          showDialogSetter={setShowDialog}
+        />
+        {workouts.map((workout) => (
+          <Marker key={workout.id} position={JSON.parse(workout.location)}>
+            <Popup>{workout.type}</Popup>
+          </Marker>
+        ))}
       </MapContainer>
       {showDialog ? (
         <WorkoutDialog
