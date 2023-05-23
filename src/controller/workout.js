@@ -1,17 +1,20 @@
 import { model } from "../model/model";
 import { set } from "./workoutSlice";
+import { set as setCurPos } from "./mapSlice";
 import { v4 as uuidv4 } from "uuid";
 
 class Workout {
+  #dispatcher;
   constructor() {}
 
-  initWokoutList(dispatcher) {
-    this.#refresh(dispatcher);
+  init(dispatcher) {
+    this.#dispatcher = dispatcher;
+    this.#refresh();
   }
 
-  #refresh(dispatcher) {
+  #refresh() {
     const workouts = model.getWorkouts();
-    dispatcher(set(workouts));
+    this.#dispatcher(set(workouts));
   }
   handleSubmit(e, workout, dispatcher) {
     e.preventDefault();
@@ -32,7 +35,7 @@ class Workout {
       // Gets the workout
       const id = e.target.closest("div[class='workout__container']").dataset.id;
       const workout = model.getWorkout(id);
-      console.log(workout, JSON.parse(workout.location));
+      this.#dispatcher(setCurPos(JSON.parse(workout.location)));
     }
   }
 }

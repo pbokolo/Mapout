@@ -10,7 +10,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    controller.initWokoutList(dispatch);
+    controller.init(dispatch);
     mapController.init(dispatch);
   }, null);
   return (
