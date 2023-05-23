@@ -4,12 +4,14 @@ import { MapView, WorkoutsList } from "./components";
 
 import "./style/main.scss";
 import { controller } from "../controller/workout";
+import { controller as mapController } from "../controller/map";
 import { useDispatch } from "react-redux";
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     controller.initWokoutList(dispatch);
+    mapController.init(dispatch);
   }, null);
   return (
     <div className="app">

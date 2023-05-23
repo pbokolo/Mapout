@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { controller } from "../../controller/map";
 
 import { Map } from "./Map";
@@ -19,8 +19,8 @@ L.Icon.Default.mergeOptions({
 
 export default function MapView() {
   const [showDialog, setShowDialog] = useState(false);
-  const [position, setPosition] = useState([0.4880271, 29.4203555]);
   const workouts = useSelector((state) => state.workouts.list);
+  const position = useSelector((state) => state.map.currentPosition);
 
   return (
     <div id="map" className="map">
@@ -29,11 +29,7 @@ export default function MapView() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Map
-          position={position}
-          positionSetter={setPosition}
-          showDialogSetter={setShowDialog}
-        />
+        <Map position={position} showDialogSetter={setShowDialog} />
         {workouts.map((workout) => (
           <Marker key={workout.id} position={JSON.parse(workout.location)}>
             <Popup className="popup">{`${
