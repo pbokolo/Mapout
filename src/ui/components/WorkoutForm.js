@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { controller } from "../../controller/workout";
 import { useDispatch } from "react-redux";
-export default function WorkoutForm({ coords }) {
+export default function WorkoutForm({ coords, closeHandler }) {
   const dispatch = useDispatch();
   const initWorkout = {
     id: "",

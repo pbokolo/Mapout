@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 
 class Workout {
   #dispatcher;
+
   constructor() {}
 
   init(dispatcher) {
@@ -16,6 +17,7 @@ class Workout {
     const workouts = model.getWorkouts();
     this.#dispatcher(set(workouts));
   }
+
   handleSubmit(e, workout, dispatcher) {
     e.preventDefault();
     workout.id = uuidv4();

@@ -12,9 +12,7 @@ export default function WorkoutsList() {
   };
   return (
     <div className="workouts workouts__container" onClick={handleClick}>
-      {list.map((w, i) => (
-        <WorkoutView key={i} workout={w} />
-      ))}
+      {list ? list.map((w, i) => <WorkoutView key={i} workout={w} />) : ""}
     </div>
   );
 }

@@ -14,7 +14,7 @@ export default function WorkoutDialog({ coords, closeHandler }) {
           <CloseIcon id="close__icon" />
         </button>
         <div className="dialog__content-body">
-          <WorkoutForm coords={coords} />
+          <WorkoutForm coords={coords} closeHandler={closeHandler} />
         </div>
       </div>
     </div>

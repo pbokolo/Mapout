@@ -30,13 +30,15 @@ export default function MapView() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <Map position={position} showDialogSetter={setShowDialog} />
-        {workouts.map((workout) => (
-          <Marker key={workout.id} position={JSON.parse(workout.location)}>
-            <Popup className="popup">{`${
-              workout.type.toLowerCase() === "cycling" ? "🚴🏿‍♂️" : "🏃‍♂️"
-            } ${workout.type}`}</Popup>
-          </Marker>
-        ))}
+        {workouts
+          ? workouts.map((workout) => (
+              <Marker key={workout.id} position={JSON.parse(workout.location)}>
+                <Popup className="popup">{`${
+                  workout.type.toLowerCase() === "cycling" ? "🚴🏿‍♂️" : "🏃‍♂️"
+                } ${workout.type}`}</Popup>
+              </Marker>
+            ))
+          : ""}
       </MapContainer>
       {showDialog ? (
         <WorkoutDialog
