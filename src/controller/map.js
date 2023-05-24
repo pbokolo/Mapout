@@ -31,7 +31,7 @@ class Map {
   }
 
   #handleGeolocationError(error) {
-    alert(error);
+    console.log(error);
   }
 
   handleOpenDialog(setState) {
