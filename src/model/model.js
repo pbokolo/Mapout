@@ -1,7 +1,7 @@
 class WorkoutDAO {
   #list;
   constructor() {
-    this.#list = this.#getLocalStorage();
+    this.#list = this.#getLocalStorage() || [];
   }
 
   #setLocalStorage() {
@@ -21,7 +21,7 @@ class WorkoutDAO {
   }
 
   save(workout) {
-    this.#list.push(workout);
+    this.#list = [...this.#list, workout];
     this.#setLocalStorage();
   }
   delete(id) {
