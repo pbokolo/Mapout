@@ -1,4 +1,4 @@
-import { set } from "./mapSlice";
+import { set, updateZoom } from "./mapSlice";
 class Map {
   #dispatcher;
 
@@ -27,6 +27,7 @@ class Map {
     const { lat, lng } = e.latlng;
     const pos = [lat, lng];
     this.#dispatcher(set(pos));
+    this.#dispatcher(updateZoom(14));
   }
 
   #handleGeolocationError(error) {

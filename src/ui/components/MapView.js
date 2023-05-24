@@ -21,10 +21,11 @@ export default function MapView() {
   const [showDialog, setShowDialog] = useState(false);
   const workouts = useSelector((state) => state.workouts.list);
   const position = useSelector((state) => state.map.currentPosition);
+  const zoom = useSelector((state) => state.map.zoom);
 
   return (
     <div id="map" className="map">
-      <MapContainer center={position} zoom={13}>
+      <MapContainer center={position} zoom={zoom}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
