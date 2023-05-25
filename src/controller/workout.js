@@ -1,6 +1,7 @@
 import { model } from "../model/model";
 import { set } from "./workoutSlice";
-import { set as setCurPos } from "./mapSlice";
+import { set as setCurPos, updateZoom } from "./mapSlice";
+
 import { v4 as uuidv4 } from "uuid";
 
 class Workout {
@@ -38,6 +39,7 @@ class Workout {
       const id = e.target.closest("div[class='workout__container']").dataset.id;
       const workout = model.getWorkout(id);
       this.#dispatcher(setCurPos(JSON.parse(workout.location)));
+      this.#dispatcher(updateZoom(14));
     }
   }
 }
