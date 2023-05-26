@@ -25,7 +25,12 @@ export default function MapView() {
 
   return (
     <div id="map" className="map">
-      <MapContainer center={position} zoom={zoom}>
+      <MapContainer
+        center={position}
+        zoom={zoom}
+        attributionControl={false}
+        zoomControl={false}
+      >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
