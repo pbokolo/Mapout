@@ -6,6 +6,7 @@ import WorkoutView from "./WorkoutView";
 
 export default function WorkoutsList() {
   const list = useSelector((state) => state.workouts.list);
+
   const dispatch = useDispatch();
   const handleClick = (e) => {
     controller.handleClick(e, dispatch);
