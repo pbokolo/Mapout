@@ -19,7 +19,7 @@
       transform: translate(-50%, -50%);
       padding: $container-padding;
       border-radius: $container-radius;
-      @include box-shadow-y(var(--color-shadow-light));
+      @include box-shadow-y(var(--color-shadow-dark));
 
       .btn-close {
         position: absolute;

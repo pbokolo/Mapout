@@ -1,10 +1,10 @@
 .workouts {
   &__container {
     overflow-y: scroll;
-    background-color: var(--color-grey-light-4--transp);
+    background-color: var(--color-white--transp);
     padding: $container-padding;
     border-radius: $container-radius;
-    @include box-shadow-y(var(--color-shadow-light));
+    @include box-shadow-y(var(--color-shadow-dark));
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(10, min-content);

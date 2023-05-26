@@ -1,5 +1,5 @@
 @mixin box-shadow-y($color) {
-  box-shadow: 0 0.12rem 0.1rem $color;
+  box-shadow: 0 0.5rem 1rem $color;
 }
 
 @mixin respond($breakpoint) {
