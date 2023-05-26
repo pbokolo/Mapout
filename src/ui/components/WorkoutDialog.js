@@ -1,11 +1,15 @@
 import React from "react";
-
+import { controller } from "../../controller/map";
 import WorkoutForm from "./WorkoutForm";
 import CloseIcon from "@mui/icons-material/Close";
 
-export default function WorkoutDialog({ coords, closeHandler }) {
+export default function WorkoutDialog({ coords }) {
   return (
-    <div id="overlay" className="dialog dialog__overlay" onClick={closeHandler}>
+    <div
+      id="overlay"
+      className="dialog dialog__overlay"
+      onClick={(e) => controller.handleCloseDialog(e)}
+    >
       <div className="dialog__content">
         <div className="dialog__content-header">
           <h5 className="title-h5">Create a new workout</h5>
@@ -14,7 +18,7 @@ export default function WorkoutDialog({ coords, closeHandler }) {
           <CloseIcon id="close__icon" />
         </button>
         <div className="dialog__content-body">
-          <WorkoutForm coords={coords} closeHandler={closeHandler} />
+          <WorkoutForm coords={coords} />
         </div>
       </div>
     </div>

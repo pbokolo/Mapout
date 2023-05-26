@@ -1,4 +1,5 @@
 import { set, updateZoom } from "./mapSlice";
+import { setShowDialog } from "./workoutSlice";
 class Map {
   #dispatcher;
 
@@ -22,8 +23,9 @@ class Map {
     }
   }
 
-  handleClick(e, setOpenDialog) {
-    this.handleOpenDialog(setOpenDialog);
+  handleClick(e) {
+    // this.handleOpenDialog(setOpenDialog);
+    this.#dispatcher(setShowDialog(true));
     const { lat, lng } = e.latlng;
     const pos = [lat, lng];
     this.#dispatcher(set(pos));
@@ -38,14 +40,14 @@ class Map {
     setState(true);
   }
 
-  handleCloseDialog(e, setState) {
+  handleCloseDialog(e) {
     if (
       e.target.id !== "close" &&
       e.target.id !== "close__icon" &&
       e.target.id !== "overlay"
     )
       return;
-    setState(false);
+    this.#dispatcher(setShowDialog(false));
   }
 }
 

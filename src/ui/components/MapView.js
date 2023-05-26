@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import { controller } from "../../controller/map";
 
@@ -18,7 +18,7 @@ L.Icon.Default.mergeOptions({
 });
 
 export default function MapView() {
-  const [showDialog, setShowDialog] = useState(false);
+  const { showDialog } = useSelector((state) => state.workouts);
   const workouts = useSelector((state) => state.workouts.list);
   const position = useSelector((state) => state.map.currentPosition);
   const zoom = useSelector((state) => state.map.zoom);
@@ -30,7 +30,7 @@ export default function MapView() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Map position={position} showDialogSetter={setShowDialog} />
+        <Map position={position} />
         {workouts
           ? workouts.map((workout) => (
               <Marker key={workout.id} position={JSON.parse(workout.location)}>
@@ -43,7 +43,7 @@ export default function MapView() {
       </MapContainer>
       {showDialog ? (
         <WorkoutDialog
-          closeHandler={(e) => controller.handleCloseDialog(e, setShowDialog)}
+          closeHandler={(e) => controller.handleCloseDialog(e)}
           coords={position}
         />
       ) : (

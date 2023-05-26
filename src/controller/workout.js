@@ -1,7 +1,6 @@
 import { model } from "../model/model";
-import { set } from "./workoutSlice";
+import { set, setShowDialog } from "./workoutSlice";
 import { set as setCurPos, updateZoom } from "./mapSlice";
-
 import { v4 as uuidv4 } from "uuid";
 
 class Workout {
@@ -21,6 +20,7 @@ class Workout {
 
   handleSubmit(e, workout, dispatcher) {
     e.preventDefault();
+    this.#dispatcher(setShowDialog(false));
     workout.id = uuidv4();
     workout.date = Date.now();
     model.save(workout);
