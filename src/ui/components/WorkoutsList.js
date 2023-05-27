@@ -12,8 +12,10 @@ export default function WorkoutsList() {
     controller.handleClick(e, dispatch);
   };
   return (
-    <div className="workouts workouts__container" onClick={handleClick}>
-      {list ? list.map((w, i) => <WorkoutView key={i} workout={w} />) : ""}
+    <div className="workouts">
+      <div className="workouts__container" onClick={handleClick}>
+        {list ? list.map((w, i) => <WorkoutView key={i} workout={w} />) : ""}
+      </div>
     </div>
   );
 }
