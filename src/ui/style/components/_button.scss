@@ -9,6 +9,7 @@
   border-radius: $container-radius;
   text-transform: uppercase;
   width: min-content;
+  @include box-shadow-y--small(var(--color-shadow-dark));
 
   &--round {
     border-radius: 50%;
@@ -16,7 +17,6 @@
 
   &--white {
     background-color: var(--color-white);
-    box-shadow: 0 0.1rem 0.1rem var(--color-grey-light-4);
 
     &:hover {
       background-color: var(--color-grey-light-2);
@@ -30,8 +30,8 @@
 
   &--primary {
     background-color: var(--color-blue);
-    box-shadow: 0 0.1rem 0.1rem var(--color-blue-dark);
     color: var(--color-white);
+    padding: 1rem 2.5rem;
 
     &:hover {
       background-color: var(--color-blue-light);
@@ -39,7 +39,6 @@
 
     &:active {
       transform: translateY(0.1rem);
-      box-shadow: 0 0.05rem 0.05rem var(--color-blue-dark);
     }
   }
 
@@ -47,7 +46,6 @@
     background-color: var(--color-grey-dark-3);
     &:hover {
       color: var(--color-danger);
-      @include box-shadow-y(var(--color-grey-dark-3));
     }
   }
 }

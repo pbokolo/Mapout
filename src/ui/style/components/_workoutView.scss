@@ -8,7 +8,7 @@
   grid-template-rows: min-content repeat(3, 1fr);
   overflow: hidden;
   gap: $layout-gap--sm;
-  @include box-shadow-y(var(--color-shadow-light));
+  @include box-shadow-y--small(var(--color-shadow-dark));
 
   &:hover {
     border-radius: $container-radius--sm;
