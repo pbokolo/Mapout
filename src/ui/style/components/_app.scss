@@ -15,4 +15,12 @@
     grid-row: 2 / 7;
     z-index: 1000;
   }
+
+  .fm-btn {
+    z-index: 1000;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+  }
 }
