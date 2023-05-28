@@ -10,7 +10,18 @@
     z-index: 1000;
 
     .dialog__content {
-      width: 25%;
+      @include respond(md) {
+        width: 25%;
+      }
+
+      @include respond(sm) {
+        width: 40%;
+      }
+
+      @include respond(xs) {
+        width: 70%;
+      }
+
       height: min-content;
       background-color: var(--color-white);
       position: absolute;
