@@ -6,6 +6,7 @@ import "./style/main.scss";
 import { controller } from "../controller/workout";
 import { controller as mapController } from "../controller/map";
 import { useDispatch } from "react-redux";
+import Menu from "./components/Menu";
 function App() {
   const dispatch = useDispatch();
 
@@ -86,7 +87,8 @@ function App() {
       ) : (
         ""
       )}
-      <WorkoutsList />
+      {/* <WorkoutsList /> */}
+      <Menu />
       <MapView />
     </div>
   );

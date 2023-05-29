@@ -23,4 +23,11 @@
     right: 10px;
     padding: 5px 10px;
   }
+
+  .menu {
+    z-index: 1000;
+    position: fixed;
+    top: 5rem;
+    left: 5rem;
+  }
 }

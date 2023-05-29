@@ -1,0 +1,54 @@
+.menu {
+  &__chk {
+    // display: none;
+  }
+
+  &__icon {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    &::before {
+      top: -0.7rem;
+    }
+
+    &::after {
+      top: 0.7rem;
+    }
+  }
+
+  &__icon,
+  &__icon::before,
+  &__icon::after {
+    display: inline-block;
+    width: 2.5rem;
+    height: 1.5px;
+    transition: all 0.2s;
+    background-color: var(--color-grey-dark-3);
+  }
+
+  &__chk-lbl {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    @include box-shadow-y(var(--color-shadow-dark));
+    background-color: var(--color-white);
+
+    &:hover .menu__icon::before {
+      top: -0.75rem;
+    }
+
+    &:hover .menu__icon::after {
+      top: 0.75rem;
+    }
+  }
+}
