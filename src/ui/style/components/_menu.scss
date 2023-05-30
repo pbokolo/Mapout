@@ -1,6 +1,6 @@
 .menu {
   &__chk {
-    // display: none;
+    display: none;
   }
 
   &__icon {
@@ -27,9 +27,9 @@
   &__icon::after {
     display: inline-block;
     width: 2.5rem;
-    height: 1.5px;
+    height: 1.75px;
     transition: all 0.2s;
-    background-color: var(--color-grey-dark-3);
+    background-color: var(--color-grey-dark-1);
   }
 
   &__chk-lbl {
@@ -50,5 +50,19 @@
     &:hover .menu__icon::after {
       top: 0.75rem;
     }
+  }
+
+  &__chk:checked + &__chk-lbl &__icon {
+    background-color: transparent;
+  }
+  &__chk:checked + &__chk-lbl &__icon::before,
+  &__chk:checked + &__chk-lbl &__icon::after {
+    top: 0;
+  }
+  &__chk:checked + &__chk-lbl &__icon::before {
+    transform: rotate(135deg);
+  }
+  &__chk:checked + &__chk-lbl &__icon::after {
+    transform: rotate(-135deg);
   }
 }
