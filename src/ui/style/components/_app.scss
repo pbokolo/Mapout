@@ -4,17 +4,17 @@
   grid-template-columns: 1rem 30rem 1fr 1rem;
   grid-template-rows: 1rem repeat(5, 1fr) 1rem;
 
-  .workouts,
+  // .workouts,
   .map {
     grid-row: 1 / -1;
     grid-column: 1 / -1;
   }
 
-  .workouts {
+  /*   .workouts {
     grid-column: 2 / 3;
     grid-row: 2 / 7;
     z-index: 1000;
-  }
+  } */
 
   .fm-btn {
     z-index: 1000;

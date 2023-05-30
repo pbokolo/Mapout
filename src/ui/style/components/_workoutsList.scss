@@ -1,7 +1,7 @@
 .workouts {
   border-radius: $container-radius;
-  background-color: var(--color-white--transp);
-  @include box-shadow-y(var(--color-shadow-dark));
+  // background-color: var(--color-white--transp);
+  //
   display: grid;
   grid-template-rows: 1rem 1fr 1rem;
   grid-template-columns: 1rem 1fr 1rem;

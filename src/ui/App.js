@@ -87,7 +87,6 @@ function App() {
       ) : (
         ""
       )}
-      {/* <WorkoutsList /> */}
       <Menu />
       <MapView />
     </div>

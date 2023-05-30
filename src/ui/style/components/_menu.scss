@@ -72,14 +72,19 @@
   }
 
   &__chk:checked ~ &__content {
-    width: 10rem;
-    height: 15rem;
+    width: 35rem;
+    height: 50rem;
     top: -1rem;
     left: -1rem;
+
+    .workouts {
+      visibility: visible;
+    }
   }
 
   &__content {
     background-color: var(--color-white--transp);
+    @include box-shadow-y(var(--color-shadow-dark));
     width: 4rem;
     height: 4rem;
     position: absolute;
@@ -88,5 +93,10 @@
     z-index: -1;
     border-radius: 2rem;
     transition: all 0.2s cubic-bezier(0.83, 0, 0.17, 1);
+
+    .workouts {
+      margin-top: 5rem;
+      visibility: hidden;
+    }
   }
 }
