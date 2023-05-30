@@ -41,7 +41,8 @@
     align-items: center;
     cursor: pointer;
     @include box-shadow-y(var(--color-shadow-dark));
-    background-color: var(--color-white);
+    background-color: var(--color-grey-light-2);
+    transition: all 0.2s;
 
     &:hover .menu__icon::before {
       top: -0.75rem;
@@ -50,6 +51,10 @@
     &:hover .menu__icon::after {
       top: 0.75rem;
     }
+  }
+
+  &__chk:checked + &__chk-lbl {
+    box-shadow: none;
   }
 
   &__chk:checked + &__chk-lbl &__icon {
@@ -64,5 +69,24 @@
   }
   &__chk:checked + &__chk-lbl &__icon::after {
     transform: rotate(-135deg);
+  }
+
+  &__chk:checked ~ &__content {
+    width: 10rem;
+    height: 15rem;
+    top: -1rem;
+    left: -1rem;
+  }
+
+  &__content {
+    background-color: var(--color-white--transp);
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 2rem;
+    transition: all 0.2s cubic-bezier(0.83, 0, 0.17, 1);
   }
 }
