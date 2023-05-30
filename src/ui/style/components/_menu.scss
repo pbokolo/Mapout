@@ -14,11 +14,11 @@
     }
 
     &::before {
-      top: -0.7rem;
+      top: -$hamb-menu-gap;
     }
 
     &::after {
-      top: 0.7rem;
+      top: $hamb-menu-gap;
     }
   }
 
@@ -33,8 +33,8 @@
   }
 
   &__chk-lbl {
-    width: 4rem;
-    height: 4rem;
+    width: $hamb-menu-sizes;
+    height: $hamb-menu-sizes;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -45,11 +45,11 @@
     transition: all 0.2s;
 
     &:hover .menu__icon::before {
-      top: -0.75rem;
+      top: -$hamb-menu-gap--bigger;
     }
 
     &:hover .menu__icon::after {
-      top: 0.75rem;
+      top: $hamb-menu-gap--bigger;
     }
   }
 
@@ -65,17 +65,17 @@
     top: 0;
   }
   &__chk:checked + &__chk-lbl &__icon::before {
-    transform: rotate(135deg);
+    transform: rotate($hamb-menu-rotate-deg);
   }
   &__chk:checked + &__chk-lbl &__icon::after {
-    transform: rotate(-135deg);
+    transform: rotate(-$hamb-menu-rotate-deg);
   }
 
   &__chk:checked ~ &__content {
     width: 35rem;
     height: 50rem;
-    top: -1rem;
-    left: -1rem;
+    top: -$padding;
+    left: -$padding;
 
     .workouts {
       visibility: visible;
@@ -85,8 +85,8 @@
   &__content {
     background-color: var(--color-white--transp);
     @include box-shadow-y(var(--color-shadow-dark));
-    width: 4rem;
-    height: 4rem;
+    width: $hamb-menu-sizes;
+    height: $hamb-menu-sizes;
     position: absolute;
     top: 0;
     left: 0;
