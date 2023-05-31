@@ -10,16 +10,24 @@
     z-index: 1000;
 
     .dialog__content {
-      @include respond(md) {
-        width: 25%;
+      @include respond(xs) {
+        width: 70%;
       }
 
       @include respond(sm) {
+        width: 60%;
+      }
+
+      @include respond(md) {
+        width: 50%;
+      }
+
+      @include respond(lg) {
         width: 40%;
       }
 
-      @include respond(xs) {
-        width: 70%;
+      @include respond(xl) {
+        width: 30%;
       }
 
       height: min-content;
