@@ -5,6 +5,7 @@
 
   &__icon {
     position: relative;
+    margin-right: 1rem;
 
     &::before,
     &::after {
@@ -33,9 +34,10 @@
   }
 
   &__chk-lbl {
-    width: $hamb-menu-sizes;
+    width: min-content;
     height: $hamb-menu-sizes;
-    border-radius: 50%;
+    padding: 0 1rem;
+    border-radius: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,10 +74,11 @@
   }
 
   &__chk:checked ~ &__content {
-    width: 35rem;
-    height: 50rem;
+    width: 28rem;
+    height: 90vh;
     top: -$padding;
     left: -$padding;
+    @include box-shadow-y(var(--color-shadow-dark));
 
     .workouts {
       visibility: visible;
@@ -84,8 +87,7 @@
 
   &__content {
     background-color: var(--color-white--transp);
-    @include box-shadow-y(var(--color-shadow-dark));
-    width: $hamb-menu-sizes;
+    width: inherit;
     height: $hamb-menu-sizes;
     position: absolute;
     top: 0;
