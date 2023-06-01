@@ -1,5 +1,10 @@
 import { model } from "../model/model";
-import { set, setShowDialog } from "./workoutSlice";
+import {
+  set,
+  setShowDialog,
+  setDistanceError,
+  setElevationError,
+} from "./workoutSlice";
 import { set as setCurPos, updateZoom } from "./mapSlice";
 import { v4 as uuidv4 } from "uuid";
 
@@ -20,15 +25,17 @@ class Workout {
 
   handleSubmit(e, workout, dispatcher) {
     e.preventDefault();
-    if (this.#checkInputs(workout)) {
-      this.#dispatcher(setShowDialog(false));
-      workout.id = uuidv4();
-      workout.date = Date.now();
-      model.save(workout);
-      this.#refresh(dispatcher);
-    } else {
-      console.log("check inputs");
-    }
+
+    if (!this.#checkInputs(workout)) return;
+
+    this.#dispatcher(setShowDialog(false));
+    this.#dispatcher(setDistanceError(false));
+    this.#dispatcher(setElevationError(false));
+
+    workout.id = uuidv4();
+    workout.date = Date.now();
+    model.save(workout);
+    this.#refresh(dispatcher);
   }
 
   handleClick(e, dispatcher) {
@@ -49,10 +56,12 @@ class Workout {
 
   #checkInputs(workout) {
     if (!workout.distance) {
+      this.#dispatcher(setDistanceError(true));
       return false;
     }
 
     if (workout.type.toLowerCase() === "cycling" && !workout.elevation) {
+      this.#dispatcher(setElevationError(true));
       return false;
     }
 

@@ -6,6 +6,12 @@
     grid-template-columns: minmax(10rem, 12rem) 15rem;
     gap: $layout-gap--sm;
 
+    .label {
+      &--error {
+        color: var(--color-error);
+      }
+    }
+
     &--submit {
       display: flex;
       justify-content: center;

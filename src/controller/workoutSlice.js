@@ -5,6 +5,8 @@ export const workoutSlice = createSlice({
   initialState: {
     list: [],
     showDialog: false,
+    distanceError: false,
+    elevationError: false,
   },
   reducers: {
     add: (state, action) => {
@@ -17,8 +19,17 @@ export const workoutSlice = createSlice({
     setShowDialog: (state, action) => {
       state.showDialog = action.payload;
     },
+
+    setDistanceError: (state, action) => {
+      state.distanceError = action.payload;
+    },
+
+    setElevationError: (state, action) => {
+      state.elevationError = action.payload;
+    },
   },
 });
 
-export const { add, set, setShowDialog } = workoutSlice.actions;
+export const { add, set, setShowDialog, setDistanceError, setElevationError } =
+  workoutSlice.actions;
 export default workoutSlice.reducer;

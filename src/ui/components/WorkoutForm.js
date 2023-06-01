@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 
 import { controller } from "../../controller/workout";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 export default function WorkoutForm({ coords }) {
   const dispatch = useDispatch();
+  const { distanceError, elevationError } = useSelector(
+    (state) => state.workouts
+  );
   const initWorkout = {
     id: "",
     date: "",
@@ -29,7 +32,7 @@ export default function WorkoutForm({ coords }) {
     <form
       className="form"
       onSubmit={(e) => {
-        setWorkout(initWorkout);
+        !distanceError && !elevationError && setWorkout(initWorkout);
         controller.handleSubmit(e, workout, dispatch);
       }}
     >
@@ -43,8 +46,11 @@ export default function WorkoutForm({ coords }) {
         </select>
       </fieldset>
       <fieldset className="fieldset">
-        <label className="label" htmlFor="distance">
-          Distance
+        <label
+          className={`label ${distanceError ? "label--error" : ""}`}
+          htmlFor="distance"
+        >
+          {distanceError ? "Invalid(0)" : "Distance"}
         </label>
         <input
           className="textInput"
@@ -56,8 +62,11 @@ export default function WorkoutForm({ coords }) {
       </fieldset>
       {workout.type === "Cycling" ? (
         <fieldset className="fieldset">
-          <label className="label" htmlFor="distance">
-            Elevation gain
+          <label
+            className={`label ${elevationError ? "label--error" : ""}`}
+            htmlFor="elevation"
+          >
+            {elevationError ? "Invalid (0)" : "Elevation gain"}
           </label>
           <input
             className="textInput"
