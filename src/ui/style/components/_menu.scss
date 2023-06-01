@@ -82,6 +82,7 @@
 
     .workouts {
       visibility: visible;
+      transform: translateX(0);
     }
   }
 
@@ -94,11 +95,12 @@
     left: 0;
     z-index: -1;
     border-radius: 2rem;
-    transition: all 0.2s cubic-bezier(0.83, 0, 0.17, 1);
+    transition: all 0.3s cubic-bezier(0.83, 0, 0.17, 1);
 
     .workouts {
       margin-top: 5rem;
-      visibility: collapse;
+      visibility: hidden;
+      transform: translateX(-100rem);
     }
   }
 }
