@@ -17,9 +17,11 @@
 
   &--white {
     background-color: var(--color-white);
+    box-shadow: none;
 
     &:hover {
-      background-color: var(--color-grey-light-2);
+      background-color: var(--color-grey-light-1);
+      box-shadow: 0 0.1rem 0.05rem var(--color-grey-light-4);
     }
 
     &:active {

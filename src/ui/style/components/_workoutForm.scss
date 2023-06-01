@@ -7,11 +7,8 @@
     gap: $layout-gap--sm;
 
     &--submit {
+      display: flex;
       justify-content: center;
-      grid-template-columns: repeat(3, 1fr);
-      .btn {
-        grid-column: 2 / 3;
-      }
     }
   }
 }
