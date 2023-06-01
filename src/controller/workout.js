@@ -20,11 +20,15 @@ class Workout {
 
   handleSubmit(e, workout, dispatcher) {
     e.preventDefault();
-    this.#dispatcher(setShowDialog(false));
-    workout.id = uuidv4();
-    workout.date = Date.now();
-    model.save(workout);
-    this.#refresh(dispatcher);
+    if (this.#checkInputs(workout)) {
+      this.#dispatcher(setShowDialog(false));
+      workout.id = uuidv4();
+      workout.date = Date.now();
+      model.save(workout);
+      this.#refresh(dispatcher);
+    } else {
+      console.log("check inputs");
+    }
   }
 
   handleClick(e, dispatcher) {
@@ -41,6 +45,18 @@ class Workout {
       this.#dispatcher(setCurPos(JSON.parse(workout.location)));
       this.#dispatcher(updateZoom(14));
     }
+  }
+
+  #checkInputs(workout) {
+    if (!workout.distance) {
+      return false;
+    }
+
+    if (workout.type.toLowerCase() === "cycling" && !workout.elevation) {
+      return false;
+    }
+
+    return true;
   }
 }
 

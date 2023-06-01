@@ -24,6 +24,7 @@ export default function WorkoutForm({ coords }) {
   const selectChangeHandler = (e) => {
     setWorkout({ ...workout, type: e.target.value });
   };
+
   return (
     <form
       className="form"

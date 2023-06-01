@@ -24,7 +24,6 @@ class Map {
   }
 
   handleClick(e) {
-    // this.handleOpenDialog(setOpenDialog);
     this.#dispatcher(setShowDialog(true));
     const { lat, lng } = e.latlng;
     const pos = [lat, lng];
@@ -33,7 +32,7 @@ class Map {
   }
 
   #handleGeolocationError(error) {
-    console.log(error);
+    alert(error.message);
   }
 
   handleOpenDialog(setState) {

@@ -1,8 +1,10 @@
 .workouts {
-  border-radius: $container-radius;
-
+  margin-top: $margin;
+  border-bottom-left-radius: $container-radius;
+  border-bottom-right-radius: $container-radius;
+  max-height: 90vh;
   display: grid;
-  grid-template-rows: 1rem 1fr 1rem;
+  grid-template-rows: 1rem 1fr 2rem;
   grid-template-columns: 1rem 1fr 1rem;
 
   &__container {

@@ -75,7 +75,7 @@
 
   &__chk:checked ~ &__content {
     width: 28rem;
-    height: 90vh;
+    height: min-content;
     top: -$padding;
     left: -$padding;
     @include box-shadow-y(var(--color-shadow-dark));
